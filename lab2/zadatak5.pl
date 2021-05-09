@@ -1,8 +1,13 @@
 #!/usr/bin/perl
 
+use open ':locale';
+use locale;
+
 $first_line = 0;
 $weights_set = 0;
-while(defined($line = <>)){
+open CSV, $ARGV[0];
+
+while(defined($line = <CSV>)){
     if ($line =~ /^#.*$/){
         next;
     }
