@@ -4,10 +4,9 @@ from typing import List
 
 def load_data(path: str) -> List[List[float]]:
     with open(path, "r") as f:
-        data = [
+        return [
             sorted([float(el) for el in x.strip().split(" ")]) for x in f.readlines()
         ]
-    return data
 
 
 def calculate_output(data: List[List[float]]) -> None:
